@@ -1,33 +1,32 @@
-from collections import Counter
 
-def topKFrequent(nums, k):
-    # Step 1: Count frequencies
-    freq_map = Counter(nums)
+def topK(num,k):
+    num_map = {} 
+    for i in num:
+        if i not in num_map:
+            num_map[i] = 1    
+        else:
+            num_map[i] += 1
+            
+    max_freq = max(num_map.values())
     
-    # Step 2: Initialize buckets
-    max_freq = len(nums)
-    buckets = [[] for _ in range(max_freq + 1)]
-
+    bucket = [[] for _ in range(max_freq+1)]
     
-    for num, freq in freq_map.items():
-        buckets[freq].append(num)
+    for key,val in num_map.items():
+        bucket[val].append(key)
         
-    print(buckets)
-    
-    # Step 3: Extract the top k frequent elements
     result = []
-    for freq in range(max_freq, 0, -1):
-        for num in buckets[freq]:
-            result.append(num)
-            if len(result) == k:
+    count = 0
+    for i in range(len(bucket)-1,-1,-1):
+        for j in bucket[i]:
+            result.append(j)
+            count += 1
+            if count >= k:
                 return result
+            
+    
+                
+# nums1 = [1, 2, 2,2, 3, 3, 3,6,5,5,5,5,5,5,5]
+nums1=[1,1,1,2,2,2,3,3,3]
+a = topK(nums1,2)
 
-
-nums1 = [1, 2, 2,2, 3, 3, 3,6]
-k1 = 2
-print(topKFrequent(nums1, k1))  # Output: [2, 3]
-
-# Example 2
-# nums2 = [7, 7]
-# k2 = 1
-# print(topKFrequent(nums2, k2))  # Output: [7]
+print(a)

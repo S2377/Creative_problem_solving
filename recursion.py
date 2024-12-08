@@ -61,5 +61,14 @@ def fibo3(n):
            
     return prev1
 
-a = fibo3(5)
-print(a)
+# a = fibo3(5)
+# print(a)
+
+def print_n(i,n):
+    
+    if i > n:
+        return
+    print(i)
+    print_n(i+1,n)
+    
+print_n(1,5)
