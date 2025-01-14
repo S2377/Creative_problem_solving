@@ -16,8 +16,6 @@
 #             end -= 1
 
 #     return lst
-
-
    
 def dutch_flag(lst,pivot):
     low = 0

@@ -1,5 +1,3 @@
-
-
 def path_exists(maze, i, j, visited):
     """
     Check if there exists a path in the maze from position (i,j) to the target
@@ -77,6 +75,5 @@ if __name__ == "__main__":
     
     print("Maze layout:")
     print_maze(maze)
-    
     result = solve_maze(maze)
     print("\nPath exists from start to end:", result)

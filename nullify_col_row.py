@@ -14,8 +14,7 @@ def nullyfy_row_col(matrix):
     for i in range(len(matrix[0])):
         if matrix[0][i] == 0 :
             rowHas_0 = True
-            
-            
+                    
     # check if first col contains o
     for i in range(len(matrix)):
         if matrix[i][0] == 0:
@@ -48,7 +47,6 @@ def nullyfy_row_col(matrix):
 
 matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
 a = nullyfy_row_col(matrix)
-
 print(a)
 
                 

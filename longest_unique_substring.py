@@ -15,7 +15,7 @@ def longest_unique_substr(s):
                 a.remove(s[left])
                 left += 1   
             a.add(s[right])
-                 
+    print(a)            
     print(max_len)  
 longest_unique_substr('shivrvam')
 

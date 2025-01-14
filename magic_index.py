@@ -1,13 +1,12 @@
 def find_magic_index(arr):
     start, end = 0, len(arr) - 1
-
     while start <= end:
         mid = (start + end) // 2
 
-        if arr[mid] == mid:
+        if arr[mid] == mid :
             return mid  # Magic index found
 
-        elif arr[mid] < mid:
+        elif arr[mid] < mid :
             start = mid + 1  # Search in the right half
         else:
             end = mid - 1  # Search in the left half
